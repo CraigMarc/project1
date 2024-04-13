@@ -21,6 +21,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import Component from './Component.js'
+import Card from './Card.js'
 
 const App = () => {
 
@@ -34,6 +35,7 @@ const App = () => {
   const [searchResult, setSearchResult] = useState("mountains")
   const [loading, setLoading] = useState()
 
+// fetch api data
 const fetchInfo = async (pics) => {
     setLoading(true)
     if (pics == undefined) {
@@ -67,16 +69,37 @@ const fetchInfo = async (pics) => {
 
   }
 
-console.log(data)
+//console.log(data)
 
   useEffect(() => {
     fetchInfo();
   }, [])
 
+  // event handler
+
+    const handleClick = (e) => {
+      let card = e.currentTarget.id
+      if (clickedOn.indexOf(card) != -1 && clickedOn.length > 0) {
+        setLoose("true")
+      }
+
+
+      if (clickedOn.indexOf(card) == -1 || clickedOn.length == 0) {
+        setClickedOn((clickedOn) => ([...clickedOn, card]));
+      }
+
+    }
+
 
   return (
     <View>
     <Component />
+   <Card
+             handleClick={handleClick}
+             clickedOn={clickedOn}
+             loose={loose}
+             data={data}
+           />
     <Text> Hello New Component
     </Text>
     </View>
