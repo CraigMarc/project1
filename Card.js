@@ -7,6 +7,7 @@ import {
   useColorScheme,
   View,
   Image,
+  TouchableOpacity,
 
 } from 'react-native';
 
@@ -77,24 +78,7 @@ const Card = (props) => {
     }
 
     let randomArray = shuffle()
-/*
-    return (
-    <View>
-       <Image
-       style={styles.image}
-               source={{
-                 uri: data.hits[0].webformatURL
-               }}
-             />
-            <Image
-                    style={styles.image}
-                    source={{
-                      uri: 'https://reactnative.dev/img/tiny_logo.png',
-                    }}
-                  />
-</View>
 
-      );*/
 
       return (
               <>
@@ -102,8 +86,8 @@ const Card = (props) => {
                       {randomArray.map((index) => {
 
                           return (
-                              <View key={index} disabled={disable} id={index} onClick={handleClick}>
-
+                              <View>
+                                <TouchableOpacity key={index} disabled={disable} id={index} onPress={handleClick}>
 
                                   <Image
                                          style={styles.image}
@@ -111,6 +95,7 @@ const Card = (props) => {
                                                    uri: picArray[index]
                                                  }}
                                                />
+                                               </TouchableOpacity>
                               </View>
                           )
                       })}
