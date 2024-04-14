@@ -94,14 +94,14 @@ const fetchInfo = async (pics) => {
   return (
     <View>
     <Component />
+    <ScrollView>
    <Card
              handleClick={handleClick}
              clickedOn={clickedOn}
              loose={loose}
              data={data}
            />
-    <Text> Hello New Component
-    </Text>
+   </ScrollView>
     </View>
 
 
