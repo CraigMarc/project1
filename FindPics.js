@@ -23,7 +23,7 @@ function FindPics(props) {
     const renderError = () => {
         if (error == "true") {
             return (
-                <h2>Pictures did not load try something else</h2>
+                <Text>Pictures did not load try something else</Text>
             )
         }
 
@@ -31,17 +31,17 @@ function FindPics(props) {
 
     return (
 
-        <div>
-            <h1 className="findTitle">Memory Game</h1>
-            <div className="findPicContainer">
-                <div className="picContainer">
+        <View>
+            <Text>Memory Game</Text>
+            <View>
+                <View>
 
-                    <h3>Fill in the form with the type of pictures you want to display on the cards in the game</h3>
-                    <h3 className="example">example: mountains, cartoon characters, animals or anything really</h3>
+                    <Text>Fill in the form with the type of pictures you want to display on the cards in the game</Text>
+                    <Text className="example">example: mountains, cartoon characters, animals or anything really</Text>
                     <form onSubmit={handlePicSubmit}>
                         <label>
                             {' '}
-                            <input
+                            <TextInput
                                 id="pictures"
                                 type="text"
                                 name="pictures"
@@ -50,14 +50,14 @@ function FindPics(props) {
 
                             />
                         </label>
-                        <div className="submitContainer">
-                            <input className="submit" type="submit" />
-                        </div>
+                        <View>
+                            <Button title="Search For Pictures" onPress={handlePicSubmit} />
+                        </View>
                     </form>
                     {renderError()}
-                </div>
-            </div>
-        </div>
+                </View>
+            </View>
+        </View>
     )
 
 }
