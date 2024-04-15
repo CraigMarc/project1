@@ -69,7 +69,7 @@ const fetchInfo = async (pics) => {
 
   }
 
-//console.log(data)
+
 
   useEffect(() => {
     fetchInfo();
@@ -77,8 +77,8 @@ const fetchInfo = async (pics) => {
 
   // event handler
 
-    const handleClick = (index) => {
-      //let card = e.currentTarget.id
+    const handleTouch = (index) => {
+      let card = index
       console.log(index)
 
       /*
@@ -99,7 +99,7 @@ const fetchInfo = async (pics) => {
     <Component />
     <ScrollView>
    <Card
-             handleClick={handleClick}
+             handleTouch={handleTouch}
              clickedOn={clickedOn}
              loose={loose}
              data={data}

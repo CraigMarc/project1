@@ -34,7 +34,7 @@ var styles = StyleSheet.create({
 const Card = (props) => {
 
     const {
-        handleClick,
+        handleTouch,
         clickedOn,
         loose,
         data,
@@ -87,7 +87,7 @@ const Card = (props) => {
 
                           return (
                               <View>
-                                <TouchableOpacity key={index} disabled={disable} onPress={() => handleClick(index)} >
+                                <TouchableOpacity key={index} disabled={disable} onPress={() => handleTouch(index)} >
                                   <Image
                                   id={index}
                                          style={styles.image}
