@@ -87,9 +87,9 @@ const Card = (props) => {
 
                           return (
                               <View>
-                                <TouchableOpacity key={index} disabled={disable} id={index} onPress={handleClick}>
-
+                                <TouchableOpacity key={index} disabled={disable} onPress={() => handleClick(index)} >
                                   <Image
+                                  id={index}
                                          style={styles.image}
                                                  source={{
                                                    uri: picArray[index]

@@ -77,10 +77,10 @@ const fetchInfo = async (pics) => {
 
   // event handler
 
-    const handleClick = (e) => {
-      let card = e.currentTarget.id
-      console.log(card)
-      console.log('hello')
+    const handleClick = (index) => {
+      //let card = e.currentTarget.id
+      console.log(index)
+
       /*
       if (clickedOn.indexOf(card) != -1 && clickedOn.length > 0) {
         setLoose("true")
