@@ -11,7 +11,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+/*
 import {
   Colors,
   DebugInstructions,
@@ -19,9 +19,10 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
+*/
 import Component from './Component.js'
 import Card from './Card.js'
+import Header from './Header'
 
 const App = () => {
 
@@ -75,13 +76,11 @@ const fetchInfo = async (pics) => {
     fetchInfo();
   }, [])
 
-  // event handler
+  // event handlers
 
     const handleTouch = (index) => {
       let card = index
-      console.log(index)
 
-      /*
       if (clickedOn.indexOf(card) != -1 && clickedOn.length > 0) {
         setLoose("true")
       }
@@ -90,12 +89,52 @@ const fetchInfo = async (pics) => {
       if (clickedOn.indexOf(card) == -1 || clickedOn.length == 0) {
         setClickedOn((clickedOn) => ([...clickedOn, card]));
       }
-*/
     }
+     const handleStart = () => {
 
+        if (clickedOn.length > bestGame) {
+          setBestGame(clickedOn.length)
+        }
+        setClickedOn([])
+        setLoose()
+        setFindPicsState(true)
+
+      }
+      //handle pic search
+/*
+      const handlePicSubmit = (event) => {
+        event.preventDefault();
+        const dataSubmit = Object.fromEntries(new FormData(event.target).entries());
+        setFindPicsState(false)
+
+        setSearchResult(dataSubmit.pictures)
+        fetchInfo(dataSubmit.pictures)
+
+        clearAllInputs()
+      }
+
+      function clearAllInputs() {
+        let allInputs = document.querySelectorAll('input');
+
+        allInputs.forEach(singleInput => singleInput.value = '');
+
+      }
+
+      if (loading == true) {
+
+        <Loading/>
+      }
+*/
+console.log(clickedOn)
 
   return (
     <View>
+    <Header
+              clickedOn={clickedOn}
+              loose={loose}
+              bestGame={bestGame}
+              searchResult={searchResult}
+            />
     <Component />
     <ScrollView>
    <Card
