@@ -6,6 +6,8 @@ import {
   Text,
   useColorScheme,
   View,
+  TextInput,
+  Button,
 } from 'react-native';
 
 
@@ -37,9 +39,9 @@ function FindPics(props) {
                 <View>
 
                     <Text>Fill in the form with the type of pictures you want to display on the cards in the game</Text>
-                    <Text className="example">example: mountains, cartoon characters, animals or anything really</Text>
+                    <Text>example: mountains, cartoon characters, animals or anything really</Text>
                     <form onSubmit={handlePicSubmit}>
-                        <label>
+
                             {' '}
                             <TextInput
                                 id="pictures"
@@ -49,7 +51,7 @@ function FindPics(props) {
                                 required
 
                             />
-                        </label>
+
                         <View>
                             <Button title="Search For Pictures" onPress={handlePicSubmit} />
                         </View>
@@ -62,4 +64,4 @@ function FindPics(props) {
 
 }
 
-export { FindPics };
+export default FindPics;;

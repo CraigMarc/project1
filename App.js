@@ -23,6 +23,8 @@ import {
 import Component from './Component.js'
 import Card from './Card.js'
 import Header from './Header'
+import NewGame from './NewGame'
+import FindPics from './FindPics'
 
 const App = () => {
 
@@ -101,7 +103,7 @@ const fetchInfo = async (pics) => {
 
       }
       //handle pic search
-/*
+
       const handlePicSubmit = (event) => {
         event.preventDefault();
         const dataSubmit = Object.fromEntries(new FormData(event.target).entries());
@@ -124,9 +126,9 @@ const fetchInfo = async (pics) => {
 
         <Loading/>
       }
-*/
-console.log(clickedOn)
 
+
+ if (findPicsState == false && error != "true") {
   return (
     <View>
     <Header
@@ -135,7 +137,11 @@ console.log(clickedOn)
               bestGame={bestGame}
               searchResult={searchResult}
             />
-    <Component />
+<NewGame
+          clickedOn={clickedOn}
+          loose={loose}
+          handleStart={handleStart}
+        />
     <ScrollView>
    <Card
              handleTouch={handleTouch}
@@ -150,6 +156,19 @@ console.log(clickedOn)
   );
 };
 
+
+return (
+    <>
+      <FindPics
+        handlePicSubmit={handlePicSubmit}
+        data={data}
+        error={error}
+      />
+
+    </>
+  )
+
+}
 
 
 
