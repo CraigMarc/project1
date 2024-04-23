@@ -56,7 +56,10 @@ function FindPics(props) {
                             />
 
                         <View>
-                            <Button title="Search For Pictures" onPress={() => handlePicSubmit(search)} />
+                            <Button title="Search For Pictures"
+                            onPress={() => handlePicSubmit(search)}
+
+                            />
                         </View>
 
                     {renderError()}

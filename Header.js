@@ -32,10 +32,12 @@ const Header = (props) => {
          }
 
      };
+     let upperCase = ''
      let search = searchResult
-     let upperCase = search.charAt(0).toUpperCase() + search.slice(1);
-
-
+     if (search != undefined)  {
+     upperCase = search.charAt(0).toUpperCase() + search.slice(1);
+}
+console.log(upperCase)
 
      return (
 
