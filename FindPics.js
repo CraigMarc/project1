@@ -8,6 +8,7 @@ import {
   View,
   TextInput,
   Button,
+  Pressable,
 } from 'react-native';
 
 import { useState } from 'react'
@@ -25,6 +26,7 @@ var styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     paddingBottom: 10,
+    fontSize: 20,
   },
 
   input: {
@@ -35,7 +37,22 @@ var styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 30,
     paddingLeft: 5,
+    fontSize: 20,
   },
+ button: {
+     alignItems: 'center',
+     justifyContent: 'center',
+     paddingVertical: 12,
+     paddingHorizontal: 32,
+     borderRadius: 4,
+     elevation: 3,
+     backgroundColor: '#24A0ed',
+
+   },
+  text: {
+       fontSize: 20,
+       color: 'white',
+     },
 });
 
 
@@ -84,10 +101,13 @@ function FindPics(props) {
                             />
 
                         <View>
-                            <Button title="Search For Pictures"
+                            <Pressable
                             onPress={() => handlePicSubmit(search)}
+                            style={styles.button}
+                            >
+                            <Text style={styles.text}>Search For Pictures</Text>
 
-                            />
+                            </Pressable>
                         </View>
 
                     {renderError()}
@@ -97,12 +117,6 @@ function FindPics(props) {
     )
 
 
-/*
-return (
-<View>
-            <Text>Memory Game</Text>
-            </View>
-)*/
 
 }
 
