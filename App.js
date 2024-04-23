@@ -25,6 +25,7 @@ import Card from './Card.js'
 import Header from './Header'
 import NewGame from './NewGame'
 import FindPics from './FindPics'
+import Loading from './Loading'
 
 const App = () => {
 
@@ -104,21 +105,22 @@ const fetchInfo = async (pics) => {
       }
       //handle pic search
 
-      const handlePicSubmit = (event) => {
-        event.preventDefault();
-        const dataSubmit = Object.fromEntries(new FormData(event.target).entries());
+      const handlePicSubmit = (search) => {
+
+        //event.preventDefault();
+        //const dataSubmit = Object.fromEntries(new FormData(event.target).entries());
         setFindPicsState(false)
 
-        setSearchResult(dataSubmit.pictures)
-        fetchInfo(dataSubmit.pictures)
+        setSearchResult(search)
+        fetchInfo(search)
 
         clearAllInputs()
       }
 
       function clearAllInputs() {
-        let allInputs = document.querySelectorAll('input');
+       // let allInputs = document.querySelectorAll('input');
 
-        allInputs.forEach(singleInput => singleInput.value = '');
+        //allInputs.forEach(singleInput => singleInput.value = '');
 
       }
 

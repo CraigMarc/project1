@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 
 
+
+
 function NewGame(props) {
 
     const {
@@ -19,11 +21,12 @@ function NewGame(props) {
 
     } = props;
 
+
    if (clickedOn.length == 12 || loose == "true") {
 
         return (
             <View >
-                <Button onPress={handleStart}>Play Another Round</Button>
+                <Button title="Play Another Round" onPress={handleStart} />
             </View>
 
 

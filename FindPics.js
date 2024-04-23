@@ -10,7 +10,7 @@ import {
   Button,
 } from 'react-native';
 
-
+import { useState } from 'react'
 
 function FindPics(props) {
 
@@ -20,6 +20,8 @@ function FindPics(props) {
         error,
 
     } = props;
+
+    const [search, setSearch] = useState()
 
 
     const renderError = () => {
@@ -40,28 +42,38 @@ function FindPics(props) {
 
                     <Text>Fill in the form with the type of pictures you want to display on the cards in the game</Text>
                     <Text>example: mountains, cartoon characters, animals or anything really</Text>
-                    <form onSubmit={handlePicSubmit}>
 
-                            {' '}
+
+
                             <TextInput
                                 id="pictures"
                                 type="text"
                                 name="pictures"
                                 placeholder="search for pictures"
+                                onChangeText={(value) => setSearch(value)}
                                 required
 
                             />
 
                         <View>
-                            <Button title="Search For Pictures" onPress={handlePicSubmit} />
+                            <Button title="Search For Pictures" onPress={() => handlePicSubmit(search)} />
                         </View>
-                    </form>
+
                     {renderError()}
                 </View>
             </View>
         </View>
     )
 
+
+/*
+return (
+<View>
+            <Text>Memory Game</Text>
+            </View>
+)*/
+
 }
 
-export default FindPics;;
+
+export default FindPics;
