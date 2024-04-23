@@ -14,7 +14,8 @@ import {
 var styles = StyleSheet.create({
   card: {
     marginBottom: 20,
-    textAlign: 'center',
+    paddingTop: 4,
+    paddingLeft: 4,
     height: 222,
       width: 330,
       borderStyle: 'solid',
@@ -23,7 +24,7 @@ var styles = StyleSheet.create({
   },
   cardContainer: {
       flex: 1,
-      flexDirection: 'row',
+      flexDirection: 'column',
       flexWrap: 'wrap',
       gap: 20,
       alignContent: 'center',
@@ -33,6 +34,7 @@ var styles = StyleSheet.create({
     height: 212,
       width: 320,
       padding: 5,
+
 
   },
 });
