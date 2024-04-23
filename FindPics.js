@@ -33,7 +33,7 @@ var styles = StyleSheet.create({
     width: '90%',
     marginLeft: 10,
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 30,
     paddingLeft: 5,
   },
 });

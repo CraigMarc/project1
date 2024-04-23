@@ -23,11 +23,11 @@ fontSize: 25,
     fontSize: 15,
         },
  clicks: {
-   marginLeft: 5,
+   marginLeft: 25,
     fontSize: 15,
         },
    bestGame: {
-      marginLeft: 5,
+      marginLeft: 25,
       fontSize: 15,
           },
     message: {
