@@ -12,21 +12,28 @@ import {
 } from 'react-native';
 
 var styles = StyleSheet.create({
-  description: {
+  card: {
     marginBottom: 20,
-    fontSize: 18,
     textAlign: 'center',
-    color: '#656565'
+    height: 222,
+      width: 330,
+      borderStyle: 'solid',
+      borderColor: 'black',
+      borderWidth: 1,
   },
-  container: {
-    padding: 30,
-    marginTop: 65,
-    alignItems: 'center'
+  cardContainer: {
+      flex: 1,
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 20,
+      alignContent: 'center',
   },
 
   image: {
-    width: 200,
-    height: 220
+    height: 212,
+      width: 320,
+      padding: 5,
+
   },
 });
 
@@ -83,11 +90,11 @@ const Card = (props) => {
 
       return (
               <>
-                  <View>
+                  <View style={styles.cardContainer}>
                       {randomArray.map((index) => {
 
                           return (
-                              <View>
+                              <View style={styles.card}>
                                 <TouchableOpacity key={index} disabled={disable} onPress={() => handleTouch(index)} >
                                   <Image
                                   id={index}

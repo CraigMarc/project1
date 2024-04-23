@@ -37,7 +37,7 @@ const Header = (props) => {
      if (search != undefined)  {
      upperCase = search.charAt(0).toUpperCase() + search.slice(1);
 }
-console.log(upperCase)
+
 
      return (
 
