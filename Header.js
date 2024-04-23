@@ -8,6 +8,42 @@ import {
   View,
 } from 'react-native';
 
+var styles = StyleSheet.create({
+  headerContainer: {
+   paddingBottom: 10,
+  },
+  gameInfoContainer: {
+
+  },
+
+  winContainer: {
+
+  },
+  title: {
+textAlign: 'center',
+fontWeight: 'bold',
+fontSize: 25,
+    },
+    description: {
+    textAlign: 'center',
+    fontSize: 15,
+        },
+ clicks: {
+   marginLeft: 5,
+    fontSize: 15,
+        },
+   bestGame: {
+      marginLeft: 5,
+      fontSize: 15,
+          },
+    message: {
+         textAlign: 'center',
+         fontSize: 25,
+             },
+});
+
+
+
 
 const Header = (props) => {
   const {
@@ -27,7 +63,7 @@ const Header = (props) => {
 
          if (loose == "true") {
              return (
-                 <Text>You Lose</Text>
+                 <Text style={styles.message}>You Lose</Text>
              )
          }
 
@@ -41,18 +77,18 @@ const Header = (props) => {
 
      return (
 
-         <View>
-             <View>
-                 <Text>{upperCase} Memory Game</Text>
-                 <Text>Get points for clicking on an image but don't click on the same image more then once.</Text>
+         <View style={styles.headerContainer}>
+             <View style={styles.gameInfoContainerContainer}>
+                 <Text style={styles.title}>{upperCase} Memory Game</Text>
+                 <Text style={styles.description}>Get points for clicking on an image but don't click on the same image more then once.</Text>
 
              </View>
 
 
              <View>
                  <View>
-                     <Text>Number of Clicks: {clickedOn.length}</Text>
-                     <Text>Best Game: {bestGame}</Text>
+                     <Text style={styles.clicks}>Number of Clicks: {clickedOn.length}</Text>
+                     <Text style={styles.bestGame}>Best Game: {bestGame}</Text>
                  </View>
                  <View>
                     {renderMessage()}
