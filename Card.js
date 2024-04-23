@@ -54,7 +54,7 @@ const Card = (props) => {
 
 
     let picArray = []
-   // console.log(data.hits[0].webformatURL)
+
 
     for (let i = 0; i <= 12; i++) {
         picArray.push(data.hits[i].webformatURL)

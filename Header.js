@@ -12,13 +12,7 @@ var styles = StyleSheet.create({
   headerContainer: {
    paddingBottom: 10,
   },
-  gameInfoContainer: {
 
-  },
-
-  winContainer: {
-
-  },
   title: {
 textAlign: 'center',
 fontWeight: 'bold',

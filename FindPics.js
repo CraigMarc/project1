@@ -12,6 +12,33 @@ import {
 
 import { useState } from 'react'
 
+var styles = StyleSheet.create({
+  title: {
+   fontWeight: 'bold',
+   fontSize: 35,
+   textAlign: 'center',
+   paddingBottom: 20,
+   paddingTop: 10,
+
+  },
+  description: {
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 10,
+  },
+
+  input: {
+    backgroundColor: '#CDCDCD',
+    borderRadius: 15,
+    width: '90%',
+    marginLeft: 10,
+    marginTop: 10,
+    marginBottom: 10,
+    paddingLeft: 5,
+  },
+});
+
+
 function FindPics(props) {
 
     const {
@@ -36,16 +63,17 @@ function FindPics(props) {
     return (
 
         <View>
-            <Text>Memory Game</Text>
+            <Text style={styles.title}>Memory Game</Text>
             <View>
                 <View>
 
-                    <Text>Fill in the form with the type of pictures you want to display on the cards in the game</Text>
-                    <Text>example: mountains, cartoon characters, animals or anything really</Text>
+                    <Text style={styles.description}>Fill in the form with the type of pictures you want to display in the game.</Text>
+                    <Text style={styles.description}>(example: mountains, cartoon characters, animals or anything really)</Text>
 
 
 
                             <TextInput
+                                style={styles.input}
                                 id="pictures"
                                 type="text"
                                 name="pictures"
