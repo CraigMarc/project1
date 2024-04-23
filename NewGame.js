@@ -9,6 +9,15 @@ import {
   Button,
 } from 'react-native';
 
+var styles = StyleSheet.create({
+  startContainer: {
+
+    paddingTop: 14,
+    paddingBottom: 14,
+
+  },
+
+});
 
 
 
@@ -25,7 +34,7 @@ function NewGame(props) {
    if (clickedOn.length == 12 || loose == "true") {
 
         return (
-            <View >
+            <View style={styles.startContainer} >
                 <Button title="Play Another Round" onPress={handleStart} />
             </View>
 

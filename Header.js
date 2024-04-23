@@ -39,6 +39,7 @@ fontSize: 25,
     message: {
          textAlign: 'center',
          fontSize: 25,
+         fontWeight: 'bold',
              },
 });
 
