@@ -96,10 +96,11 @@ const Card = (props) => {
                       {randomArray.map((index) => {
 
                           return (
-                              <View style={styles.card}>
+                              <View style={styles.card} key={index}>
                                 <TouchableOpacity key={index} disabled={disable} onPress={() => handleTouch(index)} >
                                   <Image
                                   id={index}
+                                  key={index}
                                          style={styles.image}
                                                  source={{
                                                    uri: picArray[index]
