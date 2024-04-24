@@ -11,16 +11,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-/*
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-*/
-import Component from './Component.js'
+
+
 import Card from './Card.js'
 import Header from './Header'
 import NewGame from './NewGame'
@@ -107,22 +99,13 @@ const fetchInfo = async (pics) => {
 
       const handlePicSubmit = (search) => {
 
-        //event.preventDefault();
-        //const dataSubmit = Object.fromEntries(new FormData(event.target).entries());
         setFindPicsState(false)
 
         setSearchResult(search)
         fetchInfo(search)
 
-        clearAllInputs()
       }
 
-      function clearAllInputs() {
-       // let allInputs = document.querySelectorAll('input');
-
-        //allInputs.forEach(singleInput => singleInput.value = '');
-
-      }
 
       if (loading == true) {
 
