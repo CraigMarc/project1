@@ -35,8 +35,6 @@ var styles = StyleSheet.create({
     height: 212,
       width: 320,
       padding: 5,
-
-
   },
 });
 
