@@ -36,7 +36,7 @@ import mountain13 from './images/mountain13.jpg';
 
 const App = () => {
 
- //states
+  //states
   const [clickedOn, setClickedOn] = useState([])
   const [loose, setLoose] = useState()
   const [bestGame, setBestGame] = useState(0)
@@ -45,9 +45,10 @@ const App = () => {
   const [findPicsState, setFindPicsState] = useState(true)
   const [searchResult, setSearchResult] = useState("mountains")
   const [loading, setLoading] = useState()
+  const [offline, setOffline] = useState(false)
 
-// fetch api data
-const fetchInfo = async (pics) => {
+  // fetch api data
+  const fetchInfo = async (pics) => {
     setLoading(true)
     if (pics == undefined) {
       pics = "mountains"
@@ -83,87 +84,90 @@ const fetchInfo = async (pics) => {
 
 
   useEffect(() => {
-    fetchInfo();
+    if (offline == false) {
+      fetchInfo();
+    }
   }, [])
 
   // event handlers
 
-    const handleTouch = (index) => {
-      let card = index
+  const handleTouch = (index) => {
+    let card = index
 
-      if (clickedOn.indexOf(card) != -1 && clickedOn.length > 0) {
-        setLoose("true")
-      }
-
-
-      if (clickedOn.indexOf(card) == -1 || clickedOn.length == 0) {
-        setClickedOn((clickedOn) => ([...clickedOn, card]));
-      }
+    if (clickedOn.indexOf(card) != -1 && clickedOn.length > 0) {
+      setLoose("true")
     }
-     const handleStart = () => {
-
-        if (clickedOn.length > bestGame) {
-          setBestGame(clickedOn.length)
-        }
-        setClickedOn([])
-        setLoose()
-        setFindPicsState(true)
-
-      }
-      //handle pic search
-
-      const handlePicSubmit = (search) => {
-
-        setFindPicsState(false)
-
-        setSearchResult(search)
-        fetchInfo(search)
-
-      }
-
-const playOffline = () => {
-    console.log('hello')
-        setFindPicsState(false)
 
 
-      }
+    if (clickedOn.indexOf(card) == -1 || clickedOn.length == 0) {
+      setClickedOn((clickedOn) => ([...clickedOn, card]));
+    }
+  }
+  const handleStart = () => {
 
-      if (loading == true) {
+    if (clickedOn.length > bestGame) {
+      setBestGame(clickedOn.length)
+    }
+    setClickedOn([])
+    setLoose()
+    setFindPicsState(true)
 
-        <Loading/>
-      }
+  }
+  //handle pic search
+
+  const handlePicSubmit = (search) => {
+
+    setFindPicsState(false)
+    setOffline(false)
+    setSearchResult(search)
+    fetchInfo(search)
+
+  }
+
+  const playOffline = () => {
+    setData({ hits: [mountain1, mountain2, mountain3, mountain4, mountain5, mountain6, mountain7, mountain8, mountain9, mountain10, mountain11, mountain12, mountain13] })
+    setFindPicsState(false)
+    setOffline(true)
+
+  }
+
+  if (loading == true) {
+
+    <Loading />
+  }
 
 
- if (findPicsState == false && error != "true") {
-  return (
-    <View>
-    <Header
-              clickedOn={clickedOn}
-              loose={loose}
-              bestGame={bestGame}
-              searchResult={searchResult}
-            />
-<NewGame
+  if (findPicsState == false && error != "true") {
+    return (
+      <View>
+        <Header
+          clickedOn={clickedOn}
+          loose={loose}
+          bestGame={bestGame}
+          searchResult={searchResult}
+        />
+        <NewGame
           clickedOn={clickedOn}
           loose={loose}
           handleStart={handleStart}
         />
-    <ScrollView>
-   <Card
-             handleTouch={handleTouch}
-             clickedOn={clickedOn}
-             loose={loose}
-             data={data}
-           />
-   </ScrollView>
-    </View>
+        <ScrollView>
+          <Card
+            handleTouch={handleTouch}
+            clickedOn={clickedOn}
+            loose={loose}
+            data={data}
+            offline={offline}
+          />
+        </ScrollView>
+      </View>
 
 
-  );
-};
+    );
+  };
 
 
-return (
+  return (
     <>
       <FindPics
         handlePicSubmit={handlePicSubmit}
