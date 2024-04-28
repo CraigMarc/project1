@@ -125,10 +125,12 @@ const App = () => {
   }
 
   const playOffline = () => {
+  console.log('hello')
     setData({ hits: [mountain1, mountain2, mountain3, mountain4, mountain5, mountain6, mountain7, mountain8, mountain9, mountain10, mountain11, mountain12, mountain13] })
     setFindPicsState(false)
     setOffline(true)
-
+    setError(false)
+    setSearchResult("Mountains")
   }
 
   if (loading == true) {
