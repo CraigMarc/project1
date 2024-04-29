@@ -76,7 +76,7 @@ function FindPics(props) {
     const renderError = () => {
         if (error == "true") {
             return (
-                <Text>Pictures did not load try something else</Text>
+                <Text>Pictures did not load try something else or play offline</Text>
             )
         }
 
