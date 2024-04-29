@@ -52,7 +52,7 @@ const Header = (props) => {
      const renderMessage = () => {
          if (clickedOn.length == 12) {
              return (
-                 <Text>You Win</Text>
+                 <Text style={styles.message}>You Win</Text>
              )
          }
 
