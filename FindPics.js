@@ -56,30 +56,31 @@ var styles = StyleSheet.create({
         fontSize: 20,
         color: 'white',
     },
+
     startContainer: {
-            paddingBottom: 40,
+        paddingBottom: 40,
 
-        },
-         card: {
+    },
+    card: {
 
-            height: 222,
-            width: 330,
-            borderStyle: 'solid',
-            borderColor: 'black',
-            borderWidth: 1,
-alignSelf: 'center',
- marginTop: 70,
+        height: 222,
+        width: 330,
+        borderStyle: 'solid',
+        borderColor: 'black',
+        borderWidth: 1,
+        alignSelf: 'center',
+        marginTop: 70,
 
-          },
-           image: {
-              height: 212,
-              width: 320,
-              padding: 5,
-              alignSelf: 'center',
-              marginTop: 4,
-alignItems: 'center',
+    },
+    image: {
+        height: 212,
+        width: 320,
+        padding: 5,
+        alignSelf: 'center',
+        marginTop: 4,
+        alignItems: 'center',
 
-            },
+    },
 });
 
 function FindPics(props) {
@@ -138,7 +139,7 @@ function FindPics(props) {
                     </View>
                     <View>
                         <Pressable
-                           onPress={playOffline}
+                            onPress={playOffline}
                             style={styles.button}
                         >
                             <Text style={styles.text}>Play Offline</Text>
@@ -150,15 +151,15 @@ function FindPics(props) {
                 </View>
             </View>
             <View style={styles.card}>
-                          <Image
+                <Image
 
-                                              style={styles.image}
-                                              source={
-                                               pic
-                                              }
-                              />
+                    style={styles.image}
+                    source={
+                        pic
+                    }
+                />
 
-                          </View>
+            </View>
         </View>
     )
 
