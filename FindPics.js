@@ -9,9 +9,12 @@ import {
     TextInput,
     Button,
     Pressable,
+    Image,
 } from 'react-native';
 
 import { useState } from 'react'
+
+import pic from './images/mountain2.jpg';
 
 var styles = StyleSheet.create({
     title: {
@@ -57,8 +60,27 @@ var styles = StyleSheet.create({
             paddingBottom: 40,
 
         },
-});
+         card: {
 
+            height: 222,
+            width: 330,
+            borderStyle: 'solid',
+            borderColor: 'black',
+            borderWidth: 1,
+alignSelf: 'center',
+ marginTop: 70,
+
+          },
+           image: {
+              height: 212,
+              width: 320,
+              padding: 5,
+              alignSelf: 'center',
+              marginTop: 4,
+alignItems: 'center',
+
+            },
+});
 
 function FindPics(props) {
 
@@ -127,6 +149,16 @@ function FindPics(props) {
                     {renderError()}
                 </View>
             </View>
+            <View style={styles.card}>
+                          <Image
+
+                                              style={styles.image}
+                                              source={
+                                               pic
+                                              }
+                              />
+
+                          </View>
         </View>
     )
 
