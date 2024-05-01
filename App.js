@@ -73,7 +73,7 @@ const App = () => {
     }
 
     catch (error) {
-      console.error("There has been a problem with your fetch operation:", error);
+      //console.error("There has been a problem with your fetch operation:", error);
       //add error message to dom
       setError("true")
       //setFindPicsState(true)
