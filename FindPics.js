@@ -30,6 +30,7 @@ var styles = StyleSheet.create({
         paddingRight: 10,
         paddingBottom: 10,
         fontSize: 20,
+
     },
 
     input: {

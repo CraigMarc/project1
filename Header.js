@@ -21,7 +21,9 @@ fontSize: 25,
     description: {
     textAlign: 'center',
     fontSize: 15,
-        },
+    marginLeft: 10,
+    marginRight: 10,
+           },
  clicks: {
    marginLeft: 25,
     fontSize: 15,
